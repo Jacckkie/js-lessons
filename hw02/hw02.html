@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Home work 02</title>
+</head>
+
+<body>
+    <h1>Home work 02</h1>
+    <h2>1. Почему код дает именно такие результаты?</h2>
+    <script>
+        var a = 1, b = 1, c, d;
+        c = ++a; alert(c); // 2
+        // Префиксная форма: сначала выполняется инкрементирование "a" на единицу, затем возвращение обновленного
+        //     значения "a", равного двум
+        d = b++; alert(d); // 1
+        // Постфиксная форма: сначала возвращается значение b, не подвергшееся
+        // инкрементированию и все еще равное единице, затем происходит инкрементирование, но отображается только вернувшееся значение
+        c = (2 + ++a); alert(c); // 5
+        // На данном этапе "а" уже равно 2(двум), следовательно, при префиксной форме записи оператора "а", он уже будет равен 3(трем), а значит и к числу 2 в этой операции уже прибавится 3, что приведет к выводу результата 5(пять)
+        d = (2 + b++); alert(d); // 4
+        // Причина результата равного 4 в том, что в этой операции используется повторное обращение к переменной "b" записанной, как ранее, так и теперь в постфиксная форме.При повторном обращении к переменной для вывода результата выдается ее значение с применением инкрементирования, т.е.теперь "b" равно 2(двум), что при сложении с числом 2 дает сумму 4
+        alert(a); // 3
+        // Переменная "a", была задействована в двух операциях, где последовательно была инкрементирована на две единицы.
+        alert(b); // 3
+        // В предыдущей операции к "b" (в постфиксной форме) уже равному 2(двум) было вновь применено инкрементирование, поэтому на данном этапе отображается результат 3.
+
+    </script>
+    <h2>
+        2. Чему будет равен x?
+    </h2>
+    <script>
+        var a = 2;
+        var x = 1 + (a *= 2);
+        alert(x); //5
+    </script>
+
+    </script>
+
+    <h2>
+        3.Объявить две целочисленные переменные — a и b и задать им произвольные начальные значения. Затем написать
+        скрипт, который работает по следующему принципу:</h2>
+    <h3>o если a и b положительные, вывести их разность;
+        o если а и b отрицательные, вывести их произведение;
+        o если а и b разных знаков, вывести их сумму;
+        Ноль можно считать положительным числом</h3>
+
+    <script>
+        var a = Math.random() * (10 - (-10)) + -10;
+        var a = Math.round(a);
+        var b = Math.random() * (15 - (-15)) + -15;
+        var b = Math.round(b);
+
+        if (a >= 0 && b >= 0)
+            alert(a - b);
+        else if (a < 0 && b < 0)
+            alert(a * b);
+        else if ((a >= 0 && b < 0) || (b >= 0 && a < 0))
+            alert(a + b);
+    </script>
+
+
+    <script>
+        var a = Math.random() * (10 - (-10)) + -10;
+        var a = Math.round(a);
+        var b = Math.random() * (15 - (-15)) + -15;
+        var b = Math.round(b);
+
+        if (a >= 0 && b >= 0)
+            alert(a - b);
+        else if (a < 0 && b < 0)
+            alert(a * b);
+        else if ((a >= 0 && b < 0) || (b >= 0 && a < 0))
+            alert(a + b);
+    </script>
+
+    <h2>
+        5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать
+        оператор return.</h2>
+    <script>
+
+        function plus(a, b) {
+            return (a + b);
+        }
+        result = plus(10, 20);
+        alert(result);
+
+        function minus(a, b) {
+            return (a - b);
+        }
+        result = minus(10, 20);
+        alert(result);
+
+        function multiplication(a, b) {
+            return (a * b);
+        }
+        result = multiplication(10, 20);
+        alert(result);
+
+        function division(a, b) {
+            return (a / b);
+        }
+        result = division(10, 20);
+        alert(result);
+    </script>
+
+    <h2>
+        6. Реализовать функцию с тремя параметрами:
+    </h2>
+    <h3>function mathOperation(arg1, arg2, operation), где arg1, arg2 –
+        значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции
+        выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение
+        (использовать switch).
+    </h3>
+    <script>
+        var operation = +prompt("Дано: 4 и 5. Выберите математическую операцию для этих чисел, впишите ее номер: 1 - сложение, 2 - вычитание, 3 - умножение, 4 - деление");
+        var arg1 = 5;
+        var arg2 = 10;
+        function plus(arg1, arg2) {
+            return arg1 + arg2;
+        }
+        pls = plus(arg1, arg2);
+
+        function minus(arg1, arg2) {
+            return arg1 - arg2;
+        }
+        min = minus(arg1, arg2);
+
+        function multiplication(arg1, arg2) {
+            return arg1 * arg2;
+        }
+        mul = multiplication(arg1, arg2);
+
+        function division(arg1, arg2) {
+            return arg1 / arg2;
+        }
+        div = division(arg1, arg2);
+
+        switch (operation) {
+            case 1:
+                operation = pls;
+                break;
+
+            case 2:
+                operation = min;
+                break;
+
+            case 3:
+                operation = mul;
+                break;
+
+            case 4:
+                operation = div;
+                break;
+
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+
+            alert(operation);
+        }
+        mathOperation(arg1, arg2, operation);
+
+    </script>
+
+
+</body>
+
+</html>
