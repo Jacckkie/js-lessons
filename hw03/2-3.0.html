@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home work 3. Задание 2-3. (Вар.1)</title>
+</head>
+
+<body>
+    <script>
+        const basket = [
+            { name: 'Product1', price: 100 },
+            { name: 'Product2', price: 300 },
+            { name: 'Product3', price: 200 }
+        ]
+        const countBasketPrice = basket.reduce((acc, item) => {
+            acc += item.price
+            return acc
+        }, 0)
+        console.log(countBasketPrice)
+    </script>
+</body>
+
+</html>
